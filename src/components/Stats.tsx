@@ -56,9 +56,9 @@ export default function Stats() {
   return (
     <section className="bg-navy-900">
       {/* Highlight strip */}
-      <div className="bg-navy-950 border-y border-white/10 py-4 sm:py-5">
+      <div className="bg-navy-950 border-y border-white/10 py-2.5 sm:py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-3">
             {highlights.map(({ icon: Icon, label }) => (
               <div
                 key={label}
@@ -75,16 +75,16 @@ export default function Stats() {
       </div>
 
       {/* Stats row */}
-      <div ref={ref} className="py-10 sm:py-14">
+      <div ref={ref} className="py-5 sm:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map(({ value, suffix, label }) => (
               <div key={label} className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
                   <CountUp target={value} start={visible} />
                   <span className="text-gold-400">{suffix}</span>
                 </div>
-                <div className="mt-2 text-navy-300 text-xs sm:text-sm font-medium">
+                <div className="mt-1.5 text-navy-300 text-xs sm:text-sm font-medium">
                   {label}
                 </div>
               </div>

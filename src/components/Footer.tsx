@@ -9,8 +9,8 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 pb-10 sm:pb-12 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 pb-6 border-b border-white/10">
           {/* Brand */}
           <div className="sm:col-span-2">
             <img
@@ -18,20 +18,20 @@ export default function Footer() {
               alt="ERPWorld — SAP FICO Training Institute"
               width={900}
               height={380}
-              className="h-16 sm:h-20 md:h-24 w-auto"
+              className="h-14 sm:h-16 md:h-20 w-auto"
             />
 
-            <p className="mt-5 sm:mt-6 text-navy-300 text-sm leading-relaxed max-w-md">
+            <p className="mt-4 text-navy-300 text-sm leading-relaxed max-w-md">
               India's premier SAP FICO training institute delivering
               industry-ready professionals through hands-on, project-based
               learning and comprehensive placement support.
             </p>
 
-            <div className="mt-4 text-gold-400 text-sm font-semibold italic">
+            <div className="mt-3 text-gold-400 text-sm font-semibold italic">
               "Empowering Careers. Delivering Excellence."
             </div>
 
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 mt-5">
               {[
                 { icon: Linkedin, label: "LinkedIn", href: "#contact" },
                 { icon: Youtube, label: "YouTube", href: "#courses" },
@@ -51,10 +51,10 @@ export default function Footer() {
 
           {/* Courses */}
           <div>
-            <h3 className="text-gold-400 font-bold text-sm uppercase tracking-widest mb-5">
+            <h3 className="text-gold-400 font-bold text-sm uppercase tracking-widest mb-4">
               Courses
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 text-sm">
               {[
                 "SAP FI & CO Fundamentals",
                 "GL, AP/AR & Asset Accounting",
@@ -76,10 +76,10 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-gold-400 font-bold text-sm uppercase tracking-widest mb-5">
+            <h3 className="text-gold-400 font-bold text-sm uppercase tracking-widest mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 text-sm">
               <li>
                 <a
                   href="tel:9391983250"
@@ -102,31 +102,17 @@ export default function Footer() {
 
             <a
               href="#contact"
-              className="mt-6 inline-block px-5 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 text-sm font-bold transition-colors"
+              className="mt-5 inline-block px-5 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 text-sm font-bold transition-colors"
             >
               Enroll Now
             </a>
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-navy-500">
+        <div className="pt-5 flex flex-col md:flex-row items-center justify-center gap-3 text-sm text-navy-500">
           <p>
             &copy; {new Date().getFullYear()} ERPWorld. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a
-              href="#courses"
-              className="hover:text-navy-300 transition-colors"
-            >
-              Courses
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-navy-300 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
         </div>
       </div>
     </footer>

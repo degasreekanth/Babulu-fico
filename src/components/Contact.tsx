@@ -91,37 +91,37 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy-900 py-14 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-navy-900 py-6 sm:py-8 lg:py-10"
     >
       <div className="absolute inset-0 bg-hero-pattern opacity-60" />
       <div className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 bg-gold-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-72 h-72 md:w-96 md:h-96 bg-navy-700/50 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-5 lg:mb-6">
           <span className="text-xs sm:text-sm font-bold text-gold-400 uppercase tracking-widest">
             Enrol Today
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Start Your SAP FICO Journey{" "}
             <span className="text-gold-400">Today</span>
           </h2>
-          <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
-          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-navy-300 leading-relaxed">
+          <div className="mt-2.5 mx-auto w-16 h-1 rounded-full bg-gold-400" />
+          <p className="mt-3 text-sm sm:text-base text-navy-300 leading-relaxed">
             Fill in the form and our team will contact you via WhatsApp or
             phone. Prefer to talk now? Call us directly for an instant response.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 items-start">
           {/* Info cards */}
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5 sm:gap-4 lg:gap-5">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
             <a
               href={`tel:${PHONE}`}
-              className="flex items-center gap-4 p-4 sm:p-5 md:p-6 rounded-2xl bg-gold-500 hover:bg-gold-400 transition-colors"
+              className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-gold-500 hover:bg-gold-400 transition-colors"
             >
-              <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-navy-900/20 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-5 h-5 md:w-6 md:h-6 text-navy-900" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-navy-900/20 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-5 h-5 text-navy-900" />
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-navy-900/70 uppercase tracking-wider">
@@ -135,10 +135,10 @@ export default function Contact() {
 
             <a
               href={`mailto:${EMAIL}`}
-              className="flex items-center gap-4 p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+              className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
-              <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gold-500/20 flex items-center justify-center flex-shrink-0">
-                <Mail className="w-5 h-5 md:w-6 md:h-6 text-gold-400" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gold-500/20 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-5 h-5 text-gold-400" />
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-navy-400 uppercase tracking-wider">
@@ -150,9 +150,9 @@ export default function Contact() {
               </div>
             </a>
 
-            <div className="flex items-center gap-4 p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 sm:col-span-2 lg:col-span-1">
-              <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gold-500/20 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 md:w-6 md:h-6 text-gold-400" />
+            <div className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 sm:col-span-2 lg:col-span-1">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gold-500/20 flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-5 h-5 text-gold-400" />
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-navy-400 uppercase tracking-wider">
@@ -168,10 +168,10 @@ export default function Contact() {
               href={`https://wa.me/${PHONE_INTL}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 sm:p-5 md:p-6 rounded-2xl bg-green-500/10 border border-green-400/30 hover:bg-green-500/20 transition-colors sm:col-span-2 lg:col-span-1"
+              className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-green-500/10 border border-green-400/30 hover:bg-green-500/20 transition-colors sm:col-span-2 lg:col-span-1"
             >
-              <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-green-400" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="w-5 h-5 text-green-400" />
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-green-400/70 uppercase tracking-wider">
@@ -185,17 +185,17 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-white rounded-2xl md:rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
-              <h3 className="text-lg md:text-xl font-bold text-navy-900 mb-1">
+          <div className="lg:col-span-3 bg-white rounded-2xl md:rounded-3xl shadow-2xl p-5 sm:p-6">
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-3.5">
+              <h3 className="text-lg font-bold text-navy-900">
                 Request a Free Demo
               </h3>
-              <p className="text-sm text-slate-500 mb-2">
+              <p className="text-sm text-slate-500">
                 Share a few details and we&apos;ll get back to you within one
                 working day.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-3.5">
                 <div>
                   <label
                     htmlFor="name"
@@ -252,7 +252,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-3.5">
                 <div>
                   <label
                     htmlFor="interest"
@@ -321,7 +321,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 md:px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm md:text-base transition-colors shadow-lg"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 md:px-6 py-3 rounded-xl bg-navy-900 hover:bg-navy-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm md:text-base transition-colors shadow-lg"
               >
                 {status === "submitting" ? (
                   <>

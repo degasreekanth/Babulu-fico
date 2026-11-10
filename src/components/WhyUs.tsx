@@ -54,33 +54,33 @@ const features = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-14 sm:py-20 lg:py-24 bg-slate-50">
+    <section id="why-us" className="py-6 sm:py-8 lg:py-10 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-5 lg:mb-6">
           <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
             Why Choose Us
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight">
             Everything You Need to{' '}
             <span className="text-gold-500">Succeed in SAP</span>
           </h2>
-          <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
+          <div className="mt-2.5 mx-auto w-16 h-1 rounded-full bg-gold-400" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {features.map(({ icon: Icon, title, subtitle, description }) => (
             <div
               key={title}
-              className="group bg-white rounded-2xl p-5 sm:p-6 lg:p-8 border border-slate-200 hover:border-gold-300 hover:shadow-xl hover:shadow-gold-500/5 transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-200 hover:border-gold-300 hover:shadow-xl hover:shadow-gold-500/5 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-navy-900 group-hover:bg-gold-500 flex items-center justify-center transition-colors duration-300 shadow-lg">
-                <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-gold-400 group-hover:text-navy-900 transition-colors duration-300" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-navy-900 group-hover:bg-gold-500 flex items-center justify-center transition-colors duration-300 shadow-lg">
+                <Icon className="w-5 h-5 text-gold-400 group-hover:text-navy-900 transition-colors duration-300" />
               </div>
-              <h3 className="mt-4 sm:mt-6 text-lg font-bold text-navy-900">{title}</h3>
+              <h3 className="mt-3.5 text-base sm:text-lg font-bold text-navy-900">{title}</h3>
               <p className="mt-1 text-xs font-semibold text-gold-600 uppercase tracking-wider">
                 {subtitle}
               </p>
-              <p className="mt-3 text-sm text-slate-500 leading-relaxed">{description}</p>
+              <p className="mt-2 text-sm text-slate-500 leading-relaxed">{description}</p>
             </div>
           ))}
         </div>

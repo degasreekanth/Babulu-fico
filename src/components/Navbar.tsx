@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top bar */}
-      <div className="hidden md:block bg-navy-950 text-gold-400 text-xs py-2 px-6">
+      <div className="hidden md:block bg-navy-950 text-gold-400 text-xs py-1.5 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <span className="text-navy-300">
             Empowering Careers. Delivering Excellence.
@@ -47,7 +47,7 @@ export default function Navbar() {
             : "bg-navy-900"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 py-2.5 sm:py-3">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 py-2 sm:py-2.5">
           <a
             href="#home"
             className="flex items-center shrink-0 transition-opacity hover:opacity-90"
@@ -57,7 +57,7 @@ export default function Navbar() {
               alt="ERPWorld — SAP FICO Training Institute"
               width={760}
               height={252}
-              className="h-8 sm:h-9 md:h-10 w-auto"
+              className="h-7 sm:h-8 md:h-9 w-auto"
             />
           </a>
 

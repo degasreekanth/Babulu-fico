@@ -47,36 +47,36 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-14 sm:py-20 lg:py-24 bg-white">
+    <section id="testimonials" className="py-6 sm:py-8 lg:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-5 lg:mb-6">
           <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
             Student Success Stories
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight">
             Real Students. Real{" "}
             <span className="text-gold-500">SAP Careers.</span>
           </h2>
-          <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
+          <div className="mt-2.5 mx-auto w-16 h-1 rounded-full bg-gold-400" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {testimonials.map((t) => (
             <div
               key={t.author}
-              className="flex flex-col p-5 sm:p-6 lg:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all"
+              className="flex flex-col p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all"
             >
-              <Quote className="w-8 h-8 text-gold-200" />
-              <div className="flex gap-1 mt-4">
+              <Quote className="w-7 h-7 text-gold-200" />
+              <div className="flex gap-1 mt-3">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-gold-400 text-gold-400" />
                 ))}
               </div>
-              <p className="mt-4 text-slate-700 text-sm leading-relaxed flex-1">
+              <p className="mt-3 text-slate-700 text-sm leading-relaxed flex-1">
                 "{t.quote}"
               </p>
-              <div className="mt-6 pt-6 border-t border-slate-200 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-navy-900 flex items-center justify-center text-gold-400 text-sm font-bold flex-shrink-0">
+              <div className="mt-3 pt-3 border-t border-slate-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-navy-900 flex items-center justify-center text-gold-400 text-sm font-bold flex-shrink-0">
                   {t.initials}
                 </div>
                 <div>
