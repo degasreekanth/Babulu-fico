@@ -33,23 +33,23 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-navy-900 relative overflow-hidden">
+    <section id="process" className="py-14 sm:py-20 lg:py-24 bg-navy-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-pattern opacity-60" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-bold text-gold-400 uppercase tracking-widest">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-xs sm:text-sm font-bold text-gold-400 uppercase tracking-widest">
             How It Works
           </span>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
             Your Journey to{' '}
             <span className="text-gold-400">SAP Career Success</span>
           </h2>
           <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -57,10 +57,10 @@ export default function Process() {
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-11 left-[62%] w-full h-px bg-gradient-to-r from-gold-500/40 to-transparent" />
                 )}
-                <div className="relative p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold-400/30 transition-all duration-300 group">
+                <div className="relative p-5 sm:p-6 lg:p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold-400/30 transition-all duration-300 group">
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-gold-500/20 group-hover:bg-gold-500 flex items-center justify-center transition-colors duration-300">
-                      <Icon className="w-6 h-6 text-gold-400 group-hover:text-navy-900 transition-colors duration-300" />
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-500/20 group-hover:bg-gold-500 flex items-center justify-center transition-colors duration-300">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold-400 group-hover:text-navy-900 transition-colors duration-300" />
                     </div>
                     <span className="text-3xl font-black text-white/10 group-hover:text-white/20 transition-colors">
                       {step.number}
@@ -76,12 +76,12 @@ export default function Process() {
           })}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <a
             href="tel:9391983250"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-base transition-all shadow-xl shadow-gold-500/20 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm sm:text-base transition-all shadow-xl shadow-gold-500/20 hover:-translate-y-0.5"
           >
-            <PhoneCall className="w-5 h-5" />
+            <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5" />
             Call Now: +91 93919 83250
           </a>
         </div>

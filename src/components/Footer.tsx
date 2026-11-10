@@ -9,19 +9,19 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 pb-10 sm:pb-12 border-b border-white/10">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <img
               src={`${import.meta.env.BASE_URL}images/erpworld-logo-light.png`}
               alt="ERPWorld — SAP FICO Training Institute"
               width={900}
               height={380}
-              className="h-20 md:h-24 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
             />
 
-            <p className="mt-6 text-navy-300 text-sm leading-relaxed max-w-md">
+            <p className="mt-5 sm:mt-6 text-navy-300 text-sm leading-relaxed max-w-md">
               India's premier SAP FICO training institute delivering
               industry-ready professionals through hands-on, project-based
               learning and comprehensive placement support.
@@ -41,7 +41,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-gold-500 flex items-center justify-center text-navy-300 hover:text-navy-900 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-gold-500 flex items-center justify-center text-navy-300 hover:text-navy-900 transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -65,7 +65,7 @@ export default function Footer() {
                 <li key={c}>
                   <a
                     href="#courses"
-                    className="text-navy-300 hover:text-gold-400 transition-colors"
+                    className="inline-block py-0.5 text-navy-300 hover:text-gold-400 transition-colors"
                   >
                     {c}
                   </a>

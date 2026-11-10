@@ -56,9 +56,9 @@ export default function Stats() {
   return (
     <section className="bg-navy-900">
       {/* Highlight strip */}
-      <div className="bg-navy-950 border-y border-white/10 py-5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center md:justify-between gap-6">
+      <div className="bg-navy-950 border-y border-white/10 py-4 sm:py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-4">
             {highlights.map(({ icon: Icon, label }) => (
               <div
                 key={label}
@@ -67,9 +67,7 @@ export default function Stats() {
                 <div className="w-9 h-9 rounded-lg bg-gold-500/20 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4.5 h-4.5 text-gold-400" />
                 </div>
-                <span className="font-medium leading-tight max-w-[120px] md:max-w-none">
-                  {label}
-                </span>
+                <span className="font-medium leading-tight">{label}</span>
               </div>
             ))}
           </div>
@@ -77,16 +75,16 @@ export default function Stats() {
       </div>
 
       {/* Stats row */}
-      <div ref={ref} className="py-14">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div ref={ref} className="py-10 sm:py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map(({ value, suffix, label }) => (
               <div key={label} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
                   <CountUp target={value} start={visible} />
                   <span className="text-gold-400">{suffix}</span>
                 </div>
-                <div className="mt-2 text-navy-300 text-sm font-medium">
+                <div className="mt-2 text-navy-300 text-xs sm:text-sm font-medium">
                   {label}
                 </div>
               </div>

@@ -25,10 +25,10 @@ const services = [
 
 export default function Placement() {
   return (
-    <section id="placement" className="py-20 md:py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-14">
-          <span className="text-sm font-bold text-gold-600 uppercase tracking-widest">
+    <section id="placement" className="py-14 sm:py-20 lg:py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-14">
+          <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
             Career Placement
           </span>
           <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
@@ -36,22 +36,22 @@ export default function Placement() {
             <span className="text-gold-500">We Get You Placed</span>
           </h2>
           <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
-          <p className="mt-5 text-base text-slate-500 leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-slate-500 leading-relaxed">
             Our 360-degree placement support has helped 500+ students land SAP FICO roles
             at leading IT companies and enterprises across India.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-12 md:mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-12 md:mb-14">
           {services.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="bg-white rounded-2xl p-6 md:p-7 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all group"
+              className="bg-white rounded-2xl p-5 sm:p-6 md:p-7 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl bg-navy-50 group-hover:bg-navy-900 flex items-center justify-center transition-colors duration-300">
-                <Icon className="w-6 h-6 text-navy-700 group-hover:text-gold-400 transition-colors duration-300" />
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-navy-50 group-hover:bg-navy-900 flex items-center justify-center transition-colors duration-300">
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-navy-700 group-hover:text-gold-400 transition-colors duration-300" />
               </div>
-              <h3 className="mt-5 font-bold text-navy-900">{title}</h3>
+              <h3 className="mt-4 sm:mt-5 font-bold text-navy-900">{title}</h3>
               <p className="mt-2 text-sm text-slate-500 leading-relaxed">{description}</p>
             </div>
           ))}

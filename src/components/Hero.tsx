@@ -22,22 +22,22 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-navy-900 min-h-screen flex items-center"
+      className="relative overflow-hidden bg-navy-900 flex items-center py-14 sm:py-20 lg:py-24"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 bg-hero-pattern opacity-100" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-navy-700/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         {/* Left */}
         <div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/15 border border-gold-400/30 text-gold-400 text-sm font-semibold mb-8">
-            <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+          <div className="inline-flex items-start gap-2 max-w-full px-3.5 sm:px-4 py-2 rounded-full bg-gold-500/15 border border-gold-400/30 text-gold-400 text-xs sm:text-sm font-semibold leading-snug mb-6 sm:mb-8">
+            <span className="mt-1.5 w-2 h-2 rounded-full bg-gold-400 animate-pulse flex-shrink-0" />
             Your Trusted Partner for SAP Finance Excellence
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.12] tracking-tight">
             <span className="text-gold-400">ERPWorld</span>{' '}
             <span className="block">SAP FICO</span>
             <span className="block bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">
@@ -45,41 +45,41 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mt-5 text-lg text-navy-200 font-medium tracking-wide">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-navy-200 font-medium tracking-wide">
             Learn Today &nbsp;|&nbsp; Implement Tomorrow &nbsp;|&nbsp; Lead the Future
           </p>
 
-          <p className="mt-4 text-base text-navy-300 leading-relaxed max-w-xl">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-navy-300 leading-relaxed max-w-xl">
             Industry-leading SAP FICO training from beginner to advanced level. Gain
             real-time project experience, expert mentorship, and the career support
             needed to launch your SAP career.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-10">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-base transition-all shadow-xl shadow-gold-500/20 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm sm:text-base transition-all shadow-xl shadow-gold-500/20 hover:-translate-y-0.5"
             >
               Enroll Now
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#courses"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/5 transition-colors"
             >
               <Play className="w-4 h-4 fill-white" />
               View Courses
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="mt-8 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {badges.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors"
+                className="flex flex-col items-center gap-2 p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors"
               >
-                <Icon className="w-6 h-6 text-gold-400" />
-                <span className="text-xs text-navy-200 font-medium leading-tight">{label}</span>
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold-400" />
+                <span className="text-[11px] sm:text-xs text-navy-200 font-medium leading-tight">{label}</span>
               </div>
             ))}
           </div>

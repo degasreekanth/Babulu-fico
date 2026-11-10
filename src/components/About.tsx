@@ -31,42 +31,42 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <section id="about" className="py-14 sm:py-20 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div>
-            <span className="text-sm font-bold text-gold-600 uppercase tracking-widest">
+            <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
               About ERPWorld
             </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
+            <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
               India's Premier SAP FICO{' '}
               <span className="text-gold-500">Training Institute</span>
             </h2>
             <div className="mt-3 w-16 h-1 rounded-full bg-gold-400" />
-            <p className="mt-6 text-base text-slate-600 leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-sm sm:text-base text-slate-600 leading-relaxed">
               ERPWorld was founded with one purpose: to bridge
               the gap between SAP education and real-world implementation. Our trainers
               are practicing SAP consultants who bring live project experience directly
               into the classroom.
             </p>
-            <p className="mt-4 text-base text-slate-600 leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
               Whether you are a fresh graduate looking to break into the SAP world, an
               accounts professional aiming to upskill, or a career switcher targeting the
               SAP job market, we have a course and a support system built for you.
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-6">
+            <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:gap-6">
               {[['500+', 'Students Trained'], ['95%', 'Placement Rate'], ['8+', 'Years of Excellence']].map(([value, label]) => (
-                <div key={label} className="text-center p-5 rounded-2xl bg-navy-900 shadow-lg">
-                  <div className="text-2xl font-bold text-gold-400">{value}</div>
-                  <div className="text-xs text-navy-200 mt-1 leading-tight">{label}</div>
+                <div key={label} className="text-center p-4 sm:p-5 rounded-2xl bg-navy-900 shadow-lg">
+                  <div className="text-xl sm:text-2xl font-bold text-gold-400">{value}</div>
+                  <div className="text-[11px] sm:text-xs text-navy-200 mt-1 leading-tight">{label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 grid sm:grid-cols-3 gap-5">
+            <div className="mt-8 sm:mt-10 grid sm:grid-cols-3 gap-4 sm:gap-5">
               {pillars.map(({ icon: Icon, title, text }) => (
-                <div key={title} className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                <div key={title} className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200">
                   <Icon className="w-6 h-6 text-gold-500 mb-3" />
                   <div className="font-bold text-navy-900 text-sm">{title}</div>
                   <p className="mt-2 text-xs text-slate-500 leading-relaxed">{text}</p>
@@ -76,7 +76,7 @@ export default function About() {
           </div>
 
           <div className="lg:pt-10">
-            <div className="bg-navy-900 rounded-3xl p-8 shadow-2xl">
+            <div className="bg-navy-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl">
               <h3 className="text-gold-400 font-bold text-sm uppercase tracking-widest mb-6">
                 What's Included
               </h3>

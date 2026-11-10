@@ -47,24 +47,24 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-sm font-bold text-gold-600 uppercase tracking-widest">
+    <section id="testimonials" className="py-14 sm:py-20 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+          <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
             Student Success Stories
           </span>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
             Real Students. Real{" "}
             <span className="text-gold-500">SAP Careers.</span>
           </h2>
           <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {testimonials.map((t) => (
             <div
               key={t.author}
-              className="flex flex-col p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all"
+              className="flex flex-col p-5 sm:p-6 lg:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-300 hover:shadow-lg transition-all"
             >
               <Quote className="w-8 h-8 text-gold-200" />
               <div className="flex gap-1 mt-4">

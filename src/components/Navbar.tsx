@@ -47,7 +47,7 @@ export default function Navbar() {
             : "bg-navy-900"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-3">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 py-2.5 sm:py-3">
           <a
             href="#home"
             className="flex items-center shrink-0 transition-opacity hover:opacity-90"
@@ -57,7 +57,7 @@ export default function Navbar() {
               alt="ERPWorld — SAP FICO Training Institute"
               width={760}
               height={252}
-              className="h-9 md:h-10 w-auto"
+              className="h-8 sm:h-9 md:h-10 w-auto"
             />
           </a>
 
@@ -82,23 +82,24 @@ export default function Navbar() {
           </a>
 
           <button
-            className="lg:hidden text-white p-2"
+            className="-mr-2 p-2.5 lg:hidden text-white"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </nav>
 
         {open && (
-          <div className="lg:hidden bg-navy-900 border-t border-white/10">
-            <ul className="px-6 py-4 space-y-3">
+          <div className="lg:hidden bg-navy-900 border-t border-white/10 max-h-[calc(100svh-4rem)] overflow-y-auto">
+            <ul className="px-4 sm:px-6 py-3 space-y-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block text-navy-200 hover:text-gold-400 py-2 font-medium"
+                    className="block text-navy-200 hover:text-gold-400 py-2.5 font-medium"
                   >
                     {link.label}
                   </a>
