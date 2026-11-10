@@ -38,7 +38,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-            <span className="text-gold-400">BPMR</span>{' '}
+            <span className="text-gold-400">ERPWorld</span>{' '}
             <span className="block">SAP FICO</span>
             <span className="block bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">
               Training & Consulting

@@ -3,9 +3,9 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(() => ({
+  base: "./",
   plugins: [react()],
-  base: "/Babulu-fico/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -14,4 +14,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["lucide-react"],
   },
-});
+}));

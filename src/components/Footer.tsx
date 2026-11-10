@@ -1,4 +1,10 @@
-import { GraduationCap, Phone, Mail, Globe, Linkedin, Youtube, Instagram } from 'lucide-react';
+import {
+  Phone,
+  Mail,
+  Linkedin,
+  Youtube,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -7,24 +13,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-lg shadow-gold-500/25">
-                <GraduationCap className="w-6 h-6 text-navy-900" strokeWidth={2} />
-              </div>
-              <div>
-                <div className="text-white font-bold text-lg tracking-tight">
-                  BPMR <span className="text-gold-400">SAP FICO</span>
-                </div>
-                <div className="text-navy-400 text-xs font-medium tracking-widest uppercase">
-                  Training Institute
-                </div>
-              </div>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}images/erpworld-logo-light.png`}
+              alt="ERPWorld — SAP FICO Training Institute"
+              width={900}
+              height={380}
+              className="h-20 md:h-24 w-auto"
+            />
 
-            <p className="mt-5 text-navy-300 text-sm leading-relaxed max-w-md">
-              India's premier SAP FICO training institute delivering industry-ready
-              professionals through hands-on, project-based learning and comprehensive
-              placement support.
+            <p className="mt-6 text-navy-300 text-sm leading-relaxed max-w-md">
+              India's premier SAP FICO training institute delivering
+              industry-ready professionals through hands-on, project-based
+              learning and comprehensive placement support.
             </p>
 
             <div className="mt-4 text-gold-400 text-sm font-semibold italic">
@@ -33,13 +33,13 @@ export default function Footer() {
 
             <div className="flex gap-3 mt-6">
               {[
-                { icon: Linkedin, label: 'LinkedIn' },
-                { icon: Youtube, label: 'YouTube' },
-                { icon: Instagram, label: 'Instagram' },
-              ].map(({ icon: Icon, label }) => (
+                { icon: Linkedin, label: "LinkedIn", href: "#contact" },
+                { icon: Youtube, label: "YouTube", href: "#courses" },
+                { icon: Instagram, label: "Instagram", href: "#about" },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
                   className="w-9 h-9 rounded-lg bg-white/5 hover:bg-gold-500 flex items-center justify-center text-navy-300 hover:text-navy-900 transition-colors"
                 >
@@ -56,14 +56,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               {[
-                'SAP FI & CO Fundamentals',
-                'GL, AP/AR & Asset Accounting',
-                'S/4HANA FICO & COPA',
-                'Complete Course Bundle',
-                'Corporate Training',
+                "SAP FI & CO Fundamentals",
+                "GL, AP/AR & Asset Accounting",
+                "S/4HANA FICO & COPA",
+                "Complete Course Bundle",
+                "Corporate Training",
               ].map((c) => (
                 <li key={c}>
-                  <a href="#courses" className="text-navy-300 hover:text-gold-400 transition-colors">
+                  <a
+                    href="#courses"
+                    className="text-navy-300 hover:text-gold-400 transition-colors"
+                  >
                     {c}
                   </a>
                 </li>
@@ -95,15 +98,6 @@ export default function Footer() {
                   info@bpmrsapfico.com
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://bpmrsapfico.com"
-                  className="flex items-center gap-2.5 text-navy-300 hover:text-gold-400 transition-colors"
-                >
-                  <Globe className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                  www.bpmrsapfico.com
-                </a>
-              </li>
             </ul>
 
             <a
@@ -116,10 +110,22 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-navy-500">
-          <p>&copy; {new Date().getFullYear()} BPMR SAP FICO Training Institute. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} ERPWorld. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-navy-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-navy-300 transition-colors">Terms of Service</a>
+            <a
+              href="#courses"
+              className="hover:text-navy-300 transition-colors"
+            >
+              Courses
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-navy-300 transition-colors"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>

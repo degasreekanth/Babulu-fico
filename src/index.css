@@ -5,11 +5,19 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  section[id] {
+    scroll-margin-top: 6rem;
   }
 }
 
@@ -19,27 +27,5 @@
   }
   .h-4\.5 {
     height: 1.125rem;
-  }
-}
-
-@layer utilities {
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
-  }
-  .animate-marquee-slow {
-    animation: marquee 45s linear infinite;
-  }
-  .marquee-pause:hover .animate-marquee,
-  .marquee-pause:hover .animate-marquee-slow {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }

@@ -36,7 +36,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <span className="text-sm font-bold text-gold-600 uppercase tracking-widest">
-              About BPMR SAP FICO
+              About ERPWorld
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
               India's Premier SAP FICO{' '}
@@ -44,7 +44,7 @@ export default function About() {
             </h2>
             <div className="mt-3 w-16 h-1 rounded-full bg-gold-400" />
             <p className="mt-6 text-base text-slate-600 leading-relaxed">
-              BPMR SAP FICO Training Institute was founded with one purpose: to bridge
+              ERPWorld was founded with one purpose: to bridge
               the gap between SAP education and real-world implementation. Our trainers
               are practicing SAP consultants who bring live project experience directly
               into the classroom.

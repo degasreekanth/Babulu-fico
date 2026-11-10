@@ -23,47 +23,7 @@ const services = [
   },
 ];
 
-const companies = [
-  { name: 'Infosys', color: '#1A73E8' },
-  { name: 'Wipro', color: '#34A853' },
-  { name: 'TCS', color: '#E11D48' },
-  { name: 'Accenture', color: '#A855F7' },
-  { name: 'Capgemini', color: '#0EA5E9' },
-  { name: 'Deloitte', color: '#86BC42' },
-  { name: 'IBM', color: '#0F62FE' },
-  { name: 'HCL', color: '#F97316' },
-  { name: 'Tech Mahindra', color: '#E11D48' },
-  { name: 'Cognizant', color: '#1E40AF' },
-];
-
-function LogoCard({ name, color }: { name: string; color: string }) {
-  const initials = name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-
-  return (
-    <div className="flex-shrink-0 mx-3 md:mx-4">
-      <div className="flex flex-col items-center gap-3 w-36 sm:w-40 md:w-44 h-28 md:h-32 justify-center bg-white rounded-2xl border border-white/10 shadow-lg hover:shadow-xl hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-1 px-4">
-        <div
-          className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
-          style={{ backgroundColor: color }}
-        >
-          {initials}
-        </div>
-        <span className="text-navy-900 font-bold text-sm md:text-base tracking-tight">
-          {name}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export default function Placement() {
-  const doubled = [...companies, ...companies];
-
   return (
     <section id="placement" className="py-20 md:py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -97,34 +57,17 @@ export default function Placement() {
           ))}
         </div>
 
-        {/* Hiring Partners — animated marquee */}
-        <div className="bg-navy-900 rounded-3xl py-8 md:py-10 overflow-hidden relative">
-          {/* gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-navy-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-navy-900 to-transparent z-10 pointer-events-none" />
-
-          <p className="text-center text-xs font-bold text-navy-400 uppercase tracking-widest mb-6 md:mb-8 px-4">
-            Our Students Work At
-          </p>
-
-          {/* Desktop: marquee */}
-          <div className="hidden md:block marquee-pause">
-            <div className="flex animate-marquee w-max">
-              {doubled.map((c, i) => (
-                <LogoCard key={`${c.name}-${i}`} name={c.name} color={c.color} />
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile: scrollable row */}
-          <div className="md:hidden overflow-x-auto px-4 pb-2 -mx-1">
-            <div className="flex w-max gap-3">
-              {companies.map((c) => (
-                <LogoCard key={c.name} name={c.name} color={c.color} />
-              ))}
-            </div>
-          </div>
-        </div>
+        <figure>
+          <img
+            src={`${import.meta.env.BASE_URL}images/erpworld-placements.webp`}
+            alt="ERPWorld SAP FICO learners placed at TCS, Infosys, Wipro, HCLTech, Cognizant, Deloitte, Accenture, Capgemini, Tech Mahindra and other companies"
+            width={1672}
+            height={941}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto rounded-2xl md:rounded-3xl shadow-xl ring-1 ring-slate-200"
+          />
+        </figure>
       </div>
     </section>
   );

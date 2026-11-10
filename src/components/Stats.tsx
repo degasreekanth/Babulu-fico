@@ -1,19 +1,25 @@
-import { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Monitor, Briefcase, Star, Award, HeadphonesIcon } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import {
+  GraduationCap,
+  Monitor,
+  Briefcase,
+  Award,
+  HeadphonesIcon,
+} from "lucide-react";
 
 const highlights = [
-  { icon: GraduationCap, label: 'Industry Oriented Curriculum' },
-  { icon: Monitor, label: 'Hands-on Practical Training' },
-  { icon: Briefcase, label: 'Real-Time Project Experience' },
-  { icon: Award, label: 'Certification of Course Completion' },
-  { icon: HeadphonesIcon, label: 'Post Training Support & Guidance' },
+  { icon: GraduationCap, label: "Industry Oriented Curriculum" },
+  { icon: Monitor, label: "Hands-on Practical Training" },
+  { icon: Briefcase, label: "Real-Time Project Experience" },
+  { icon: Award, label: "Certification of Course Completion" },
+  { icon: HeadphonesIcon, label: "Post Training Support & Guidance" },
 ];
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Students Trained' },
-  { value: 95, suffix: '%', label: 'Placement Rate' },
-  { value: 15, suffix: '+', label: 'Expert Trainers' },
-  { value: 8, suffix: '+', label: 'Years of Excellence' },
+  { value: 500, suffix: "+", label: "Students Trained" },
+  { value: 95, suffix: "%", label: "Placement Rate" },
+  { value: 15, suffix: "+", label: "Expert Trainers" },
+  { value: 8, suffix: "+", label: "Years of Excellence" },
 ];
 
 function CountUp({ target, start }: { target: number; start: boolean }) {
@@ -41,7 +47,7 @@ export default function Stats() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -54,11 +60,16 @@ export default function Stats() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap justify-center md:justify-between gap-6">
             {highlights.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-3 text-sm text-navy-200">
+              <div
+                key={label}
+                className="flex items-center gap-3 text-sm text-navy-200"
+              >
                 <div className="w-9 h-9 rounded-lg bg-gold-500/20 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4.5 h-4.5 text-gold-400" />
                 </div>
-                <span className="font-medium leading-tight max-w-[120px] md:max-w-none">{label}</span>
+                <span className="font-medium leading-tight max-w-[120px] md:max-w-none">
+                  {label}
+                </span>
               </div>
             ))}
           </div>
@@ -75,7 +86,9 @@ export default function Stats() {
                   <CountUp target={value} start={visible} />
                   <span className="text-gold-400">{suffix}</span>
                 </div>
-                <div className="mt-2 text-navy-300 text-sm font-medium">{label}</div>
+                <div className="mt-2 text-navy-300 text-sm font-medium">
+                  {label}
+                </div>
               </div>
             ))}
           </div>

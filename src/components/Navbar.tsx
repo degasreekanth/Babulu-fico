@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Menu, X, GraduationCap, Phone } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
-  { label: 'Courses', href: '#courses' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'About', href: '#about' },
-  { label: 'Placement', href: '#placement' },
-  { label: 'Contact', href: '#contact' },
+  { label: "Home", href: "#home" },
+  { label: "Courses", href: "#courses" },
+  { label: "Why Us", href: "#why-us" },
+  { label: "About", href: "#about" },
+  { label: "Process", href: "#process" },
+  { label: "Placement", href: "#placement" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -15,8 +18,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -40,26 +43,25 @@ export default function Navbar() {
       <header
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-navy-900/95 backdrop-blur-md shadow-lg shadow-navy-950/30'
-            : 'bg-navy-900'
+            ? "bg-navy-900/95 backdrop-blur-md shadow-lg shadow-navy-950/30"
+            : "bg-navy-900"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 py-3">
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-lg shadow-gold-500/25 group-hover:scale-105 transition-transform">
-              <GraduationCap className="w-6 h-6 text-navy-900" strokeWidth={2} />
-            </div>
-            <div className="leading-tight">
-              <div className="text-white font-bold text-lg tracking-tight">
-                BPMR <span className="text-gold-400">SAP FICO</span>
-              </div>
-              <div className="text-navy-300 text-xs font-medium tracking-widest uppercase">
-                Training Institute
-              </div>
-            </div>
+        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-3">
+          <a
+            href="#home"
+            className="flex items-center shrink-0 transition-opacity hover:opacity-90"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/erpworld-lockup-light.png`}
+              alt="ERPWorld — SAP FICO Training Institute"
+              width={760}
+              height={252}
+              className="h-9 md:h-10 w-auto"
+            />
           </a>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
@@ -74,13 +76,13 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 text-sm font-bold transition-all shadow-lg shadow-gold-500/25 hover:-translate-y-0.5"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 text-sm font-bold transition-all shadow-lg shadow-gold-500/25 hover:-translate-y-0.5"
           >
             Enroll Now
           </a>
 
           <button
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -89,7 +91,7 @@ export default function Navbar() {
         </nav>
 
         {open && (
-          <div className="md:hidden bg-navy-900 border-t border-white/10">
+          <div className="lg:hidden bg-navy-900 border-t border-white/10">
             <ul className="px-6 py-4 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>

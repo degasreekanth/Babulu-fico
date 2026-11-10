@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, type FormEvent } from "react";
 import {
   Mail,
   Phone,
@@ -8,28 +8,28 @@ import {
   CheckCircle2,
   AlertCircle,
   MessageCircle,
-} from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+} from "lucide-react";
+import { isSupabaseConfigured, supabase } from "@/lib/supabase";
 
 const interests = [
-  'Free Demo Class',
-  'Course Details & Fees',
-  'Batch Timings',
-  'Placement Assistance',
-  'Doubt / General Inquiry',
+  "Free Demo Class",
+  "Course Details & Fees",
+  "Batch Timings",
+  "Placement Assistance",
+  "Doubt / General Inquiry",
 ];
 
-const modes = ['Online (Live)', 'Offline / Classroom', 'Hybrid'];
+const modes = ["Online (Live)", "Offline / Classroom", "Hybrid"];
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Status = "idle" | "submitting" | "success" | "error";
 
-const PHONE = '9391983250';
-const PHONE_INTL = '919391983250';
-const EMAIL = 'info@bpmrsapfico.com';
+const PHONE = "9391983250";
+const PHONE_INTL = "919391983250";
+const EMAIL = "info@bpmrsapfico.com";
 
 export default function Contact() {
-  const [status, setStatus] = useState<Status>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [submittedData, setSubmittedData] = useState<{
     name: string;
     phone: string;
@@ -37,65 +37,68 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-    setErrorMsg('');
+    setStatus("submitting");
+    setErrorMsg("");
 
     const fd = new FormData(e.currentTarget);
-    const name = String(fd.get('name') || '');
-    const email = String(fd.get('email') || '');
-    const phone = String(fd.get('phone') || '');
-    const interest = String(fd.get('interest') || '');
-    const mode = String(fd.get('mode') || '');
-    const message = String(fd.get('message') || '');
+    const name = String(fd.get("name") || "");
+    const email = String(fd.get("email") || "");
+    const phone = String(fd.get("phone") || "");
+    const interest = String(fd.get("interest") || "");
+    const mode = String(fd.get("mode") || "");
+    const message = String(fd.get("message") || "");
 
     if (!name || !email || !phone) {
-      setStatus('error');
-      setErrorMsg('Please fill in your name, email, and phone number.');
+      setStatus("error");
+      setErrorMsg("Please fill in your name, email, and phone number.");
       return;
     }
 
-    // Save to database
-    const { error } = await supabase.from('contact_inquiries').insert({
-      name,
-      email,
-      phone: phone || null,
-      company: mode || null,
-      service: interest || null,
-      message: message || 'No additional message',
-    });
+    if (isSupabaseConfigured() && supabase) {
+      const { error } = await supabase.from("contact_inquiries").insert({
+        name,
+        email,
+        phone: phone || null,
+        company: mode || null,
+        service: interest || null,
+        message: message || "No additional message",
+      });
 
-    if (error) {
-      setStatus('error');
-      setErrorMsg('Something went wrong. Please try again or call us directly.');
-      return;
+      if (error) {
+        setStatus("error");
+        setErrorMsg(
+          "Something went wrong. Please try again or call us directly.",
+        );
+        return;
+      }
     }
 
     // Build WhatsApp message
-    const waText = `*New Enquiry — BPMR SAP FICO*%0A%0A*Name:* ${encodeURIComponent(
-      name
+    const waText = `*New Enquiry — ERPWorld*%0A%0A*Name:* ${encodeURIComponent(
+      name,
     )}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(
-      phone
+      phone,
     )}%0A*Interest:* ${encodeURIComponent(interest)}%0A*Mode:* ${encodeURIComponent(
-      mode
-    )}%0A*Message:* ${encodeURIComponent(message || 'N/A')}`;
+      mode,
+    )}%0A*Message:* ${encodeURIComponent(message || "N/A")}`;
 
     // Build mailto link
     const mailSubject = encodeURIComponent(
-      `New Enquiry from ${name} — BPMR SAP FICO`
+      `New Enquiry from ${name} — ERPWorld`,
     );
     const mailBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${interest}\nMode: ${mode}\n\nMessage: ${message || 'N/A'}`
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${interest}\nMode: ${mode}\n\nMessage: ${message || "N/A"}`,
     );
 
     setSubmittedData({ name, phone });
-    setStatus('success');
+    setStatus("success");
     e.currentTarget.reset();
 
     // Open WhatsApp in new tab
     window.open(
       `https://wa.me/${PHONE_INTL}?text=${waText}`,
-      '_blank',
-      'noopener,noreferrer'
+      "_blank",
+      "noopener,noreferrer",
     );
 
     // Open email client
@@ -117,12 +120,13 @@ export default function Contact() {
             Enrol Today
           </span>
           <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Start Your SAP FICO Journey{' '}
+            Start Your SAP FICO Journey{" "}
             <span className="text-gold-400">Today</span>
           </h2>
           <div className="mt-3 mx-auto w-16 h-1 rounded-full bg-gold-400" />
           <p className="mt-5 text-sm sm:text-base text-navy-300 leading-relaxed">
-            Fill in the form and we'll forward your enquiry via WhatsApp and email instantly, or call us directly for an instant response.
+            Fill in the form and we'll forward your enquiry via WhatsApp and
+            email instantly, or call us directly for an instant response.
           </p>
         </div>
 
@@ -199,7 +203,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3 bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-8">
-            {status === 'success' ? (
+            {status === "success" ? (
               <div className="flex flex-col items-center justify-center text-center py-10 md:py-14">
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-50 flex items-center justify-center">
                   <CheckCircle2 className="w-7 h-7 md:w-8 md:h-8 text-green-500" />
@@ -208,8 +212,8 @@ export default function Contact() {
                   Enquiry Sent Successfully!
                 </h3>
                 <p className="mt-3 text-slate-500 max-w-sm text-sm leading-relaxed">
-                  Thank you, {submittedData?.name}! We've forwarded your enquiry via
-                  WhatsApp and email. Our advisor will call you on{' '}
+                  Thank you, {submittedData?.name}! We've forwarded your enquiry
+                  via WhatsApp and email. Our advisor will call you on{" "}
                   <strong>{submittedData?.phone}</strong> within a few hours.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -223,7 +227,7 @@ export default function Contact() {
                     Open WhatsApp
                   </a>
                   <button
-                    onClick={() => setStatus('idle')}
+                    onClick={() => setStatus("idle")}
                     className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
                   >
                     Submit another enquiry
@@ -236,7 +240,8 @@ export default function Contact() {
                   Request a Free Demo
                 </h3>
                 <p className="text-sm text-slate-500 mb-2">
-                  Fill out the form and we'll forward your enquiry via WhatsApp and email instantly.
+                  Fill out the form and we'll forward your enquiry via WhatsApp
+                  and email instantly.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
@@ -350,7 +355,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {status === 'error' && (
+                {status === "error" && (
                   <div className="flex items-center gap-2.5 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
                     <AlertCircle className="w-4 h-4 flex-shrink-0" />
                     {errorMsg}
@@ -359,10 +364,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={status === 'submitting'}
+                  disabled={status === "submitting"}
                   className="w-full inline-flex items-center justify-center gap-2 px-5 md:px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm md:text-base transition-colors shadow-lg"
                 >
-                  {status === 'submitting' ? (
+                  {status === "submitting" ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" /> Submitting...
                     </>
@@ -374,7 +379,7 @@ export default function Contact() {
                 </button>
 
                 <p className="text-center text-xs text-slate-400">
-                  Or call us directly:{' '}
+                  Or call us directly:{" "}
                   <a
                     href={`tel:${PHONE}`}
                     className="text-gold-600 font-bold hover:underline"
