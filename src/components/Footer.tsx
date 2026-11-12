@@ -1,6 +1,7 @@
 import {
   Phone,
   Mail,
+  Globe,
   Linkedin,
   Youtube,
   Instagram,
@@ -14,10 +15,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2">
             <img
-              src={`${import.meta.env.BASE_URL}images/erpworld-logo-light.png`}
-              alt="ERPWorld — SAP FICO Training Institute"
+              src={`${import.meta.env.BASE_URL}images/erpwonder-logo-light.png`}
+              alt="ERPWonder — SAP FICO Training Institute"
               width={900}
-              height={380}
+              height={342}
               className="h-14 sm:h-16 md:h-20 w-auto"
             />
 
@@ -91,11 +92,20 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@bpmrsapfico.com"
+                  href="mailto:erpwondersapfi@gmail.com"
                   className="flex items-center gap-2.5 text-navy-300 hover:text-gold-400 transition-colors"
                 >
                   <Mail className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                  info@bpmrsapfico.com
+                  erpwondersapfi@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://erpwonder.com"
+                  className="flex items-center gap-2.5 text-navy-300 hover:text-gold-400 transition-colors"
+                >
+                  <Globe className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                  erpwonder.com
                 </a>
               </li>
             </ul>
@@ -111,7 +121,7 @@ export default function Footer() {
 
         <div className="pt-5 flex flex-col md:flex-row items-center justify-center gap-3 text-sm text-navy-500">
           <p>
-            &copy; {new Date().getFullYear()} ERPWorld. All rights reserved.
+            &copy; {new Date().getFullYear()} ERPWonder. All rights reserved.
           </p>
         </div>
       </div>

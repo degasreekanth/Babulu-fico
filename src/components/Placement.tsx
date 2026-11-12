@@ -59,8 +59,8 @@ export default function Placement() {
 
         <figure className="mx-auto max-w-5xl">
           <img
-            src={`${import.meta.env.BASE_URL}images/erpworld-placements.webp`}
-            alt="ERPWorld SAP FICO learners placed at TCS, Infosys, Wipro, HCLTech, Cognizant, Deloitte, Accenture, Capgemini, Tech Mahindra and other companies"
+            src={`${import.meta.env.BASE_URL}images/erpwonder-placements.webp`}
+            alt="ERPWonder SAP FICO learners placed at TCS, Infosys, Wipro, HCLTech, Cognizant, Deloitte, Accenture, Capgemini, Tech Mahindra and other companies"
             width={1672}
             height={941}
             loading="lazy"

@@ -36,7 +36,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           <div>
             <span className="text-xs sm:text-sm font-bold text-gold-600 uppercase tracking-widest">
-              About ERPWorld
+              About ERPWonder
             </span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight">
               India's Premier SAP FICO{' '}
@@ -44,7 +44,7 @@ export default function About() {
             </h2>
             <div className="mt-2.5 w-16 h-1 rounded-full bg-gold-400" />
             <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-              ERPWorld was founded with one purpose: to bridge
+              ERPWonder was founded with one purpose: to bridge
               the gap between SAP education and real-world implementation. Our trainers
               are practicing SAP consultants who bring live project experience directly
               into the classroom.

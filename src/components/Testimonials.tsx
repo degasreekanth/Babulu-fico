@@ -3,7 +3,7 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     quote:
-      "I joined ERPWorld with zero SAP knowledge. Within 4 months, I had a job offer from Infosys as a junior SAP FICO consultant. The real-time project exposure made all the difference.",
+      "I joined ERPWonder with zero SAP knowledge. Within 4 months, I had a job offer from Infosys as a junior SAP FICO consultant. The real-time project exposure made all the difference.",
     author: "Priya Sharma",
     role: "SAP FICO Consultant, Infosys",
     initials: "PS",
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "I was a CA looking to transition into SAP. ERPWorld's structured curriculum and the mock interview sessions helped me land a role at Deloitte within 6 weeks of completing the course.",
+      "I was a CA looking to transition into SAP. ERPWonder's structured curriculum and the mock interview sessions helped me land a role at Deloitte within 6 weeks of completing the course.",
     author: "Ananya Reddy",
     role: "SAP FICO Consultant, Deloitte",
     initials: "AR",
@@ -31,14 +31,14 @@ const testimonials = [
   },
   {
     quote:
-      "Weekend batches were a lifesaver since I was working full-time. The recorded sessions meant I never missed a concept. Highly recommend ERPWorld to any working professional.",
+      "Weekend batches were a lifesaver since I was working full-time. The recorded sessions meant I never missed a concept. Highly recommend ERPWonder to any working professional.",
     author: "Meghna Patel",
     role: "Senior SAP Analyst, Capgemini",
     initials: "MP",
   },
   {
     quote:
-      "From resume to final interview, the placement team guided me every step. Got placed at HCL as a fresher with a great package. Couldn't have done it without ERPWorld.",
+      "From resume to final interview, the placement team guided me every step. Got placed at HCL as a fresher with a great package. Couldn't have done it without ERPWonder.",
     author: "Aditya Kumar",
     role: "SAP FICO Associate, HCL",
     initials: "AK",

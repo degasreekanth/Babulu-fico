@@ -98,20 +98,18 @@ export default function SuccessModal({ open, onClose }: Props) {
           id="success-title"
           className="mt-5 text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl"
         >
-          Thank You!
+          Thank you!
         </h2>
         <p
           id="success-message"
           className="mt-3 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
         >
-          Your Free Demo Request Has Been Submitted Successfully.
-        </p>
-        <p className="mt-2.5 text-sm leading-relaxed text-slate-500">
-          Our ERPWorld team will contact you shortly via WhatsApp or phone.
+          Your demo request has been submitted successfully. Our team will
+          contact you soon.
         </p>
 
         <p className="mt-6 rounded-xl border border-gold-200 bg-gold-50 px-4 py-3 text-xs font-bold uppercase tracking-wide text-gold-700 sm:text-sm">
-          ERPWorld – SAP FICO Training Institute
+          ERPWonder – SAP FICO Training Institute
         </p>
 
         <button

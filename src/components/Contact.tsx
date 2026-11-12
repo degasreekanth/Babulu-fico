@@ -9,11 +9,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import SuccessModal from "@/components/SuccessModal";
-import {
-  buildGmailComposeUrl,
-  isLeadDeliveryConfigured,
-  submitLead,
-} from "@/lib/leads";
+import { submitLead } from "@/lib/leads";
 
 const interests = [
   "Free Demo Class",
@@ -29,7 +25,7 @@ type Status = "idle" | "submitting" | "error";
 
 const PHONE = "9391983250";
 const PHONE_INTL = "919391983250";
-const EMAIL = "info@bpmrsapfico.com";
+const EMAIL = "erpwondersapfi@gmail.com";
 
 const fieldClass =
   "w-full px-3.5 py-3 rounded-lg border border-slate-300 focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20 outline-none transition-all text-slate-900 text-base sm:text-sm";
@@ -62,16 +58,6 @@ export default function Contact() {
 
     setStatus("submitting");
     setErrorMsg("");
-
-    // Until a Google Sheet webhook or Supabase project is configured, hand the
-    // request to Gmail compose so the enquiry still reaches the inbox.
-    if (!isLeadDeliveryConfigured()) {
-      window.open(
-        buildGmailComposeUrl(lead, EMAIL),
-        "_blank",
-        "noopener,noreferrer",
-      );
-    }
 
     try {
       await submitLead(lead);

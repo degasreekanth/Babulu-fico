@@ -17,31 +17,11 @@ const LEAD_WEBHOOK_URL = (
   import.meta.env.VITE_LEAD_WEBHOOK_URL || DEFAULT_LEAD_WEBHOOK_URL
 ).trim();
 
+const LEAD_EMAIL = "erpwondersapfi@gmail.com";
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${LEAD_EMAIL}`;
+
 export function hasLeadWebhook() {
   return LEAD_WEBHOOK_URL.length > 0;
-}
-
-export function isLeadDeliveryConfigured() {
-  return hasLeadWebhook() || isSupabaseConfigured();
-}
-
-export function buildGmailComposeUrl(lead: LeadPayload, to: string) {
-  const params = new URLSearchParams({
-    view: "cm",
-    fs: "1",
-    to,
-    su: `New Free Demo Request — ERPWorld`,
-    body: [
-      `Name: ${lead.name}`,
-      `Email: ${lead.email}`,
-      `Phone / WhatsApp: ${lead.phone}`,
-      `Interested In: ${lead.interest || "Not specified"}`,
-      `Preferred Mode: ${lead.mode || "Not specified"}`,
-      "",
-      `Message: ${lead.message || "N/A"}`,
-    ].join("\n"),
-  });
-  return `https://mail.google.com/mail/?${params.toString()}`;
 }
 
 export async function submitLead(lead: LeadPayload) {
@@ -54,7 +34,7 @@ export async function submitLead(lead: LeadPayload) {
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify({
         ...lead,
-        source: "erpworld-website",
+        source: "erpwonder-website",
         submittedAt: new Date().toISOString(),
       }),
       keepalive: true,
@@ -75,5 +55,35 @@ export async function submitLead(lead: LeadPayload) {
     return "supabase" as const;
   }
 
-  return "none" as const;
+  // Default delivery: FormSubmit emails the enquiry without leaving the page.
+  // Its first request emails a one-time activation link to LEAD_EMAIL.
+  const response = await fetch(FORMSUBMIT_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone,
+      interest: lead.interest || "Not specified",
+      mode: lead.mode || "Not specified",
+      message: lead.message || "No additional message",
+      _subject: `New Free Demo Request — ${lead.name}`,
+      _replyto: lead.email,
+      _template: "table",
+      _captcha: "false",
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(`Lead delivery failed with status ${response.status}`);
+  }
+  const result = (await response.json().catch(() => null)) as {
+    success?: string;
+  } | null;
+  if (result && String(result.success) !== "true") {
+    throw new Error("Lead delivery was rejected");
+  }
+  return "email" as const;
 }

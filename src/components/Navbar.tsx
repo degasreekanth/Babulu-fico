@@ -53,8 +53,8 @@ export default function Navbar() {
             className="flex items-center shrink-0 transition-opacity hover:opacity-90"
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/erpworld-lockup-light.png`}
-              alt="ERPWorld — SAP FICO Training Institute"
+              src={`${import.meta.env.BASE_URL}images/erpwonder-lockup-light.png`}
+              alt="ERPWonder — SAP FICO Training Institute"
               width={760}
               height={252}
               className="h-7 sm:h-8 md:h-9 w-auto"
